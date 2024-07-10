@@ -19,6 +19,10 @@ app.use(express.json());
 app.use('/form', formRouter);
 app.use('/dashboard', dashboardRouter);
 
+app.get('/', (req, res) => {
+    res.send('MAIN ROUTES');
+})
+
 app.listen(PORT, () => {
     console.log(`Connected to server, ${BASE_URI}`);
 })
