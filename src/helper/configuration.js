@@ -4,10 +4,10 @@ function configure(envirovment){
     let MONGO = ''
     if(envirovment.ENVIROVMENT === "development"){
         MONGO = envirovment.MONGO_URI_LOCAL;
-        BASE_URI = `http://localhost:${PORT}/`;
+        BASE_URI = envirovment.LOCAL;
     }else if(envirovment === "production"){
         MONGO = envirovment.MONGO_URI_ATLAS;
-        BASE_URI = `http://localhost:${PORT}/`;
+        BASE_URI = envirovment.VERCEL;
     }
     return {BASE_URI, PORT, MONGO};
 }
